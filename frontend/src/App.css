@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #dff7e0; /* pastel green */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 1vmin);
+  color: #0b3d2e; /* dark green text */
+  padding: 24px 0 48px;
+}
+
+.banner {
+  width: 100%;
+  background: linear-gradient(90deg,#bfeed1,#dff7e0);
+  border-bottom: 1px solid rgba(11,61,46,0.08);
+  box-shadow: 0 2px 6px rgba(11,61,46,0.06);
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.banner .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.banner h1 { margin: 0; font-size: 28px; color: #083826 }
+
+.content {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.survey-form { text-align: left; }
+
+.field-row { margin-bottom: 14px; }
+
+.field-row label { display:block; font-weight:600; margin-bottom:6px }
+
+.field-row .field-input-row {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.field-row input,
+.field-row textarea,
+.field-row select {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(11,61,46,0.15);
+  background: white;
+  color: #083826;
+}
+
+.go-button {
+  flex: 0 0 70px;
+  background: #2e8b57;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.go-button:disabled { opacity: 0.6; cursor: default }
+
+.submit-btn {
+  background: #0b5a3f;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.field-saved { margin-left:8px; color: #0b5a3f; font-size: 13px }
+

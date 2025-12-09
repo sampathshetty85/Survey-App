@@ -38,8 +38,7 @@ def on_startup():
     SQLModel.metadata.create_all(engine)
 
 # Serve static frontend
-if FRONTEND_DIR.exists():
-    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
+# NOTE: mount the frontend after API routes to avoid StaticFiles shadowing API paths
 
 @app.post('/api/surveys', response_model=Survey)
 def create_survey(item: Survey):
@@ -59,3 +58,7 @@ def list_surveys():
 @app.get('/api/health')
 def health():
     return {"status": "ok"}
+
+# Serve static frontend at root — mount after API routes so `/api/*` works
+if FRONTEND_DIR.exists():
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
